@@ -54,6 +54,7 @@ Hücre boyutlarını başlatıcı belirler; sağlayıcılar 4×3 ve 4×4 önerir
 - Kaynaklar: `res/drawable/ic_launcher_background.xml`, `ic_launcher_foreground.xml`, `ic_launcher_monochrome.xml` ve `res/mipmap-anydpi/ic_launcher*.xml`; minSdk 31 olduğu için çalışma anında her yoğunlukta adaptive XML seçilir, `mipmap-mdpi…xxxhdpi/ic_launcher*.png` (48–192 px) API 26 öncesi ve araç uyumluluğu içindir. Manifest `android:icon` ve `android:roundIcon` bu kaynaklara bağlıdır.
 - Geometri tek kaynaktan üretilir: `python scripts/make-icon-assets.py` (ek bağımlılık yok) vektörleri, mipmap PNG'leri ve maskeli 48/96/192 önizlemelerini yazar; önizlemeler `artifacts/icon-preview-*.png`.
 - APK denetimi: `powershell -ExecutionPolicy Bypass -File scripts/check-icon-resources.ps1` manifest bağlantısını, adaptive/monochrome kaynaklarını ve yoğunluk PNG'lerini denetler.
+- Güncel derlemenin başlatıcı çizimi Pixel Launcher'lı emülatörde (Android 17, 420 dpi) 48dp'de doğrulandı: `docs/images/launcher-icon-pixel-launcher-48dp.png`. Fiziksel cihaz (Oppo) teyidi güncel derleme için yapılmadı; ayrıntı ve sınırlar `docs/launcher-icon.md`.
 - Üçüncü taraf logo, kelime markası veya dalga/nota gibi marka motifleri kullanılmaz; ikon yalnızca uygulamanın kendi grafit/adaçayı paletinden türetilir.
 
 ## Derleme

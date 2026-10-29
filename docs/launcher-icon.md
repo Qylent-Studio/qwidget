@@ -23,14 +23,15 @@ Kapsam: grafit zemin üzerinde adaçayı yeşili, widget çerçevesi biçiminde 
 
 ## Doğrulama kanıtı
 
-Aşağıdaki çıktılar yerel doğrulama kanıtıdır; `artifacts/` yayına dahil edilmez.
+Aşağıdaki çıktılar doğrulama kanıtıdır. `artifacts/` altındaki dosyalar yayına dahil edilmez; yayına giren tek görsel kanıt `docs/images/launcher-icon-pixel-launcher-48dp.png`'dir.
 
 - `scripts/verify.ps1`: BUILD SUCCESSFUL, 74 birim testi / 0 hata, lint 0 hata / 30 uyarı (tamamı önceden var olan uyarılar; ikon değişikliği yeni uyarı eklemedi).
 - `scripts/check-icon-resources.ps1`: geçti - `android:icon` → `mipmap/ic_launcher`, `android:roundIcon` → `mipmap/ic_launcher_round`; adaptive katmanlar `drawable/ic_launcher_background|foreground|monochrome` olarak çözülüyor; beş yoğunlukta PNG APK içinde.
 - Önizlemeler: `artifacts/icon-preview-{48,96,192}-{round,square,squircle}.png` ve toplu sayfa `artifacts/icon-preview-grid.png`.
-- Cihaz: Oppo A5 5G (Android 16), `adb install -r artifacts/qwidget-studio-debug.apk` başarılı. İlk derlemede ikon ColorOS squircle maskesiyle başlatıcıda doğru göründü ve uygulama korunmuş davranışla açıldı (`artifacts/app-launched.png`). Sonraki ince ayardan (zemin ölçeği, kuyruk marjı) sonra cihaz USB'den düştüğü için güncel derlemenin başlatıcı ekran görüntüsü alınamadı; bu son görsel teyit **yapılmadı**.
+- Güncel derlemenin başlatıcı çizimi — emülatör: Pixel Launcher, Android 17, 420 dpi, 1080×2424. `adb install -r artifacts/qwidget-studio-debug.apk` başarılı; uygulama çekmecesinde ikon sistem tarafından 48dp'de çizildi, yuvarlak maskede kırpılmadan okunur durumda (bkz. `docs/images/launcher-icon-pixel-launcher-48dp.png`). Eşleşme, çekmece dökümünde `content-desc="QWidget"` düğümüyle doğrulandı (`bounds=[540,1668][795,1950]`).
+- Cihaz: Oppo A5 5G (Android 16), `adb install -r artifacts/qwidget-studio-debug.apk` başarılı. İlk derlemede ikon ColorOS squircle maskesiyle başlatıcıda doğru göründü ve uygulama korunmuş davranışla açıldı (`artifacts/app-launched.png`). Sonraki ince ayardan (zemin ölçeği, kuyruk marjı) sonra cihaz USB'den düştüğü için güncel derlemenin **fiziksel cihazdaki** başlatıcı ekran görüntüsü alınamadı; bu teyit **yapılmadı** (güncel derleme bunun yerine yukarıdaki emülatör başlatıcısında görsel olarak doğrulandı).
 
 ## Sınırlar
 
-- Önizleme rasterleri `scripts/make-icon-assets.py` içindeki geometriyle üretilir (4×4 süper örnekleme, bağımlılık yok). Android'in kendi çizimi ilk derlemede cihaz ekran görüntüsüyle doğrulandı; yukarıdaki ince ayardan sonra güncel derleme için bu teyit yapılmadı.
-- Farklı başlatıcıların (ör. yuvarlak maskeli Pixel) ve temalı ikon görünümü ayrı cihazlarda denenmedi; monochrome katmanın APK'da çözüldüğü denetlendi, görsel temalı ikon testi yapılmadı.
+- Önizleme rasterleri `scripts/make-icon-assets.py` içindeki geometriyle üretilir (4×4 süper örnekleme, bağımlılık yok). Android'in kendi çizimi ilk derlemede fiziksel cihazda, ince ayardan sonraki güncel derleme ise Pixel Launcher'lı emülatörde ekran görüntüsüyle doğrulandı.
+- Maske kapsamı: yuvarlak maske hem ColorOS (squircle, ilk derleme) hem Pixel Launcher (daire, güncel derleme) başlatıcılarında görüldü; kare ve squircle maskeler yalnızca yerel önizlemelerle sınırlıdır. Temalı (monochrome) ikon görünümü görsel olarak test edilmedi: emülatörde `themed_icons` açıkken duvar kağıdından tema rengi türetilmediği için başlatıcı simgeleri renkli kaldı; monochrome katmanın APK'da `<monochrome>` olarak çözüldüğü denetlendi.
