@@ -28,7 +28,7 @@ Aşağıdaki çıktılar yerel doğrulama kanıtıdır; `artifacts/` yayına dah
 - `scripts/verify.ps1`: BUILD SUCCESSFUL, 74 birim testi / 0 hata, lint 0 hata / 30 uyarı (tamamı önceden var olan uyarılar; ikon değişikliği yeni uyarı eklemedi).
 - `scripts/check-icon-resources.ps1`: geçti - `android:icon` → `mipmap/ic_launcher`, `android:roundIcon` → `mipmap/ic_launcher_round`; adaptive katmanlar `drawable/ic_launcher_background|foreground|monochrome` olarak çözülüyor; beş yoğunlukta PNG APK içinde.
 - Önizlemeler: `artifacts/icon-preview-{48,96,192}-{round,square,squircle}.png` ve toplu sayfa `artifacts/icon-preview-grid.png`.
-- Cihaz: Oppo A5 5G (Android 16), `adb install -r artifacts/qwidget-studio-debug.apk` başarılı; başlatıcıda ikon ColorOS squircle maskesiyle doğru göründü (`artifacts/launcher-home.png`, `artifacts/launcher-icon-crop.png`), uygulama açılışı korunmuş davranışla çalıştı (`artifacts/app-launched.png`).
+- Cihaz: Oppo A5 5G (Android 16), `adb install -r artifacts/qwidget-studio-debug.apk` başarılı. İlk derlemede ikon ColorOS squircle maskesiyle başlatıcıda doğru göründü ve uygulama korunmuş davranışla açıldı (`artifacts/app-launched.png`). Sonraki ince ayardan (zemin ölçeği, kuyruk marjı) sonra cihaz USB'den düştüğü için güncel derlemenin başlatıcı ekran görüntüsü alınamadı; bu son görsel teyit **yapılmadı**.
 
 ## Sınırlar
 
