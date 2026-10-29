@@ -32,5 +32,5 @@ Aşağıdaki çıktılar yerel doğrulama kanıtıdır; `artifacts/` yayına dah
 
 ## Sınırlar
 
-- Önizleme rasterleri `scripts/make-icon-assets.py` içindeki geometriyle üretilir (4×4 süper örnekleme, bağımlılık yok); Android'in kendi çizimi cihaz ekran görüntüsüyle ayrıca doğrulandı.
+- Önizleme rasterleri `scripts/make-icon-assets.py` içindeki geometriyle üretilir (4×4 süper örnekleme, bağımlılık yok). Android'in kendi çizimi ilk derlemede cihaz ekran görüntüsüyle doğrulandı; yukarıdaki ince ayardan sonra güncel derleme için bu teyit yapılmadı.
 - Farklı başlatıcıların (ör. yuvarlak maskeli Pixel) ve temalı ikon görünümü ayrı cihazlarda denenmedi; monochrome katmanın APK'da çözüldüğü denetlendi, görsel temalı ikon testi yapılmadı.
