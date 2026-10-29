@@ -1,0 +1,5 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent" android:layout_height="match_parent" android:orientation="vertical" android:gravity="center" android:padding="20dp" android:background="@drawable/widget_preview_background">
+    <ImageView android:layout_width="64dp" android:layout_height="64dp" android:src="@drawable/ic_music" android:contentDescription="@string/spotify_widget" />
+    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:gravity="center" android:text="@string/spotify_widget" android:textColor="#F5F7F6" android:textSize="20sp" android:textStyle="bold" android:layout_marginTop="16dp" />
+    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:gravity="center" android:text="@string/widget_preview_caption" android:textColor="#ADB6B1" android:textSize="14sp" android:layout_marginTop="8dp" />
+</LinearLayout>

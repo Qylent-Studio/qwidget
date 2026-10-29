@@ -1,0 +1,17 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/battery_root" android:layout_width="match_parent" android:layout_height="match_parent">
+    <FrameLayout android:id="@+id/battery_surface" android:layout_width="match_parent" android:layout_height="match_parent"
+        android:background="@drawable/battery_background" android:importantForAccessibility="no" />
+    <ImageView android:layout_width="match_parent" android:layout_height="match_parent"
+        android:src="@drawable/battery_glass_highlight" android:scaleType="fitXY" android:importantForAccessibility="no" />
+    <LinearLayout android:id="@+id/battery_content" android:layout_width="match_parent" android:layout_height="match_parent"
+        android:orientation="vertical" android:gravity="center_vertical" android:padding="6dp">
+        <TextView android:id="@+id/battery_percentage" android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:text="—" android:textColor="#F5F7F6" android:textSize="18sp" android:textStyle="bold" android:maxLines="1" android:includeFontPadding="false" />
+        <TextView android:id="@+id/battery_status" android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:text="@string/battery_loading" android:textColor="#F5F7F6" android:textSize="10sp" android:maxLines="1" android:ellipsize="end" android:includeFontPadding="false" />
+        <ProgressBar android:id="@+id/battery_progress" style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="match_parent" android:layout_height="2dp"
+            android:indeterminate="false" android:max="100" android:progress="0" android:progressTint="#B8F39B" />
+    </LinearLayout>
+</FrameLayout>

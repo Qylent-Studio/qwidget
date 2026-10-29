@@ -1,0 +1,12 @@
+<resources>
+    <string name="battery_widget">Pil · 2×1</string>
+    <string name="battery_description">Pil yüzdesi ve şarj durumu. Rengi widget başına seçilir.</string>
+    <string name="battery_loading">Pil bilgisi yükleniyor…</string>
+    <string name="app_name">QWidget</string>
+    <string name="spotify_widget">Spotify</string>
+    <string name="spotify_compact">Spotify · 4×3</string>
+    <string name="spotify_large">Spotify · 4×4</string>
+    <string name="spotify_compact_description">Albüm kapağı, şarkı ve müzik kontrolleri. Kompakt boyut.</string>
+    <string name="spotify_large_description">Daha büyük albüm kapağı, şarkı ve müzik kontrolleri.</string>
+    <string name="widget_preview_caption">Kapağın, şarkın, senin renklerin.</string>
+</resources>

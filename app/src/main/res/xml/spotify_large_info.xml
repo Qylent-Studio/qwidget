@@ -1,0 +1,6 @@
+<appwidget-provider xmlns:android="http://schemas.android.com/apk/res/android"
+    android:minWidth="250dp" android:minHeight="280dp" android:minResizeWidth="160dp" android:minResizeHeight="120dp"
+    android:targetCellWidth="4" android:targetCellHeight="4" android:resizeMode="horizontal|vertical"
+    android:updatePeriodMillis="0" android:initialLayout="@layout/widget_loading" android:previewLayout="@layout/widget_loading"
+    android:configure="dev.qwidget.settings.WidgetSettingsActivity" android:widgetFeatures="reconfigurable|configuration_optional"
+    android:description="@string/spotify_large_description" android:widgetCategory="home_screen" />
